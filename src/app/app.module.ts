@@ -1,10 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+// COMPONENTS
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
-import { HeaderComponent } from './components/shared/header/header.component';
+import { HomeComponent, 
+         SearchComponent, 
+         HeaderComponent } from './components/index.components';
+
+// ROUTES
+import { APP_ROUTING } from './app.routes';        
 
 @NgModule({
   declarations: [
@@ -14,7 +19,8 @@ import { HeaderComponent } from './components/shared/header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]

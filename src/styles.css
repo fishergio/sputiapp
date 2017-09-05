@@ -28,7 +28,7 @@ hr{
 
 @media (max-width: 600px) {
   .carousel-item {
-    height: 280px;
+    height: 300px;
   }
 }
 
@@ -69,4 +69,8 @@ hr{
 
 .fadeIn {
   animation-name: fadeIn;
+}
+
+.top-30 {
+  padding: 30px 50px 40px;
 }
