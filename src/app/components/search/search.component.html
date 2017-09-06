@@ -12,7 +12,9 @@
         </div>
         <div class="col-md-9">
           <div class="row">
-            <div class="col-md-3 text-center" *ngFor="let artist of spotifySrv.artists">
+            <div class="col-md-3 text-center puntero" 
+            [routerLink]="['/artist', artist.id]"
+            *ngFor="let artist of spotifySrv.artists">
               <h3 *ngIf="!spotifySrv.artists.length" >No se encontraron resultados de: {{ search }}</h3>
               <img [src]="artist.images | noimage" alt="" class="img-fluid img-thumbnail">
               <!-- [src]="artist.images[1]?.url" -->

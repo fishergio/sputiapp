@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -8,7 +9,7 @@ import { SpotifyService } from '../../services/spotify.service';
 export class SearchComponent implements OnInit {
 
   search: string = "";
-  constructor(private spotifySrv: SpotifyService) { 
+  constructor(private spotifySrv: SpotifyService, private router: Router) { 
     //console.log("Servicio de spotify listo para usarse");
   }
 
@@ -19,7 +20,11 @@ export class SearchComponent implements OnInit {
   searchArtist(){
     this.spotifySrv.getArtists(this.search)
     .subscribe();
+  }
 
+  showArtist(id: string) {
+    //console.log(id);
+    this.router.navigate(['/artist', id]);
   }
 
 }
