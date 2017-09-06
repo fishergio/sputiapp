@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 // SERVICES
 import { SpotifyService } from './services/spotify.service';
@@ -12,18 +13,21 @@ import { HomeComponent,
          HeaderComponent } from './components/index.components';
 
 // ROUTES
-import { APP_ROUTING } from './app.routes';        
+import { APP_ROUTING } from './app.routes';
+import { NoimagePipe } from './pipes/noimage.pipe';        
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     APP_ROUTING
   ],
   providers: [

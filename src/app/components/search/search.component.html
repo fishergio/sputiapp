@@ -1,5 +1,24 @@
+<div class="container top-30">
+    <div class="row">
+        <div class="col-md-3">
+            <label for="search">Buscado de artistas</label>
+            <input [(ngModel)]="search" 
+            (keyup)="searchArtist()"
+            name="search"
+            class="form-control mr-sm-2" 
+            type="text" 
+            placeholder="Buscar artista..." aria-label="Search">
+            <hr>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-3 text-center" *ngFor="let artist of spotifySrv.artists">
+              <h3 *ngIf="!spotifySrv.artists.length" >No se encontraron resultados de: {{ search }}</h3>
+              <img [src]="artist.images | noimage" alt="" class="img-fluid img-thumbnail">
+              <!-- [src]="artist.images[1]?.url" -->
+              <p>{{ artist.name }}</p>
+            </div>
+          </div>
+      </div>
+</div>
 
-<form class="form-inline my-2 my-lg-0 animated fadeIn">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
