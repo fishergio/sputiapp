@@ -15,6 +15,7 @@ import { HomeComponent,
 // ROUTES
 import { APP_ROUTING } from './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomsurePipe } from './pipes/domsure.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     SearchComponent,
     HeaderComponent,
     ArtistComponent,
-    NoimagePipe
+    NoimagePipe,
+    DomsurePipe
     
   ],
   imports: [

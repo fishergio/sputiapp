@@ -1,0 +1,47 @@
+<div class="top-30" ng-if="artist">
+  <div class="row top-40">
+    <div class="col-md-3 text-center">
+      <img [src]="artist?.images | noimage" alt="" class="img-thumnail img-circle" width="200">
+    </div>
+    <div class="col-md-9 text-center">
+      <h3>{{ artist?.name }}</h3>
+      <hr>
+      <a [href]="artist?.external_urls.spotify" target="_blank" class="btn btn-outline-success">Ver en spotify</a>
+      <a [routerLink]="['/search']" class="btn btn-outline-danger">Ir artistas</a>
+    </div>
+    <hr>
+    <div class="col-md-12 top-40">
+      <div class="table-responsive">
+        <table class="table table-striped table-inverse">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Portada</th>
+              <th>Canción</th>
+              <th>Album</th>
+              <th>Popularidad</th>
+              <th>Preview</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sound of sounds; let i = index;">
+              <td>{{ i + 1}}</td>
+              <td><img [src]="sound.album?.images | noimage" alt="" width="50"></td>
+              <td>{{ sound.name }}</td>
+              <td>{{ sound.album.name }}</td>
+              <td>{{ sound.popularity}}%</td>
+              <!--<td controls>
+                <audio [src]="sound.preview_url"></audio>
+                Tu navegador es muy viejo
+              </td>-->
+              <td>
+                  <iframe [src]=" sound.uri | domsure:'https://embed.spotify.com/?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
